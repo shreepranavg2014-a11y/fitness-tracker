@@ -1,0 +1,33 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Dist
+dist/
+build/
+
+# Angular
+.angular/
+.angularCache/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+/package-lock.json
+/yarn.lock
+
+# Misc
+*.log
+.cache/
