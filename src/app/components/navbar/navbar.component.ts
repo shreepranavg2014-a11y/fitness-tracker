@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   title = 'Fitness Tracker';
+    logout() { console.log('Logout clicked'); }
 }
