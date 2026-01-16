@@ -1,0 +1,274 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Shreepranav",
+      "email": "shreepranav@fitness.com",
+      "age": 22,
+      "weight": 75,
+      "height": 180,
+      "goals": ["Lose Weight", "Build Muscle", "Increase Stamina"],
+      "stats": {
+        "workoutsCompleted": 15,
+        "totalCalories": 5750,
+        "totalMinutes": 450,
+        "currentStreak": 5
+      },
+      "createdAt": "2025-01-01T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "name": "John Doe",
+      "email": "john@fitness.com",
+      "age": 28,
+      "weight": 82,
+      "height": 185,
+      "goals": ["Build Muscle", "Gain Strength"],
+      "stats": {
+        "workoutsCompleted": 25,
+        "totalCalories": 8900,
+        "totalMinutes": 700,
+        "currentStreak": 8
+      },
+      "createdAt": "2024-12-15T08:30:00Z"
+    }
+  ],
+  "workouts": [
+    {
+      "id": 1,
+      "title": "Leg Day",
+      "description": "Complete lower body workout focusing on quads, hamstrings, and glutes",
+      "duration": 60,
+      "difficulty": "Hard",
+      "caloriesBurned": 450,
+      "targetMuscleGroup": ["Quads", "Hamstrings", "Glutes"],
+      "createdAt": "2024-12-01T00:00:00Z"
+    },
+    {
+      "id": 2,
+      "title": "Chest & Triceps",
+      "description": "Upper body push workout for chest, shoulders, and triceps",
+      "duration": 50,
+      "difficulty": "Medium",
+      "caloriesBurned": 350,
+      "targetMuscleGroup": ["Chest", "Triceps", "Shoulders"],
+      "createdAt": "2024-12-02T00:00:00Z"
+    },
+    {
+      "id": 3,
+      "title": "Back & Biceps",
+      "description": "Upper body pull workout for back, biceps, and rear delts",
+      "duration": 55,
+      "difficulty": "Medium",
+      "caloriesBurned": 380,
+      "targetMuscleGroup": ["Back", "Biceps", "Rear Delts"],
+      "createdAt": "2024-12-03T00:00:00Z"
+    },
+    {
+      "id": 4,
+      "title": "HIIT Cardio",
+      "description": "High-intensity interval training for cardiovascular fitness",
+      "duration": 30,
+      "difficulty": "Hard",
+      "caloriesBurned": 400,
+      "targetMuscleGroup": ["Cardio"],
+      "createdAt": "2024-12-04T00:00:00Z"
+    },
+    {
+      "id": 5,
+      "title": "Yoga & Flexibility",
+      "description": "Flexibility and mobility work with yoga poses",
+      "duration": 45,
+      "difficulty": "Easy",
+      "caloriesBurned": 180,
+      "targetMuscleGroup": ["Full Body", "Flexibility"],
+      "createdAt": "2024-12-05T00:00:00Z"
+    }
+  ],
+  "exercises": [
+    {
+      "id": 1,
+      "workoutPlanId": 1,
+      "name": "Barbell Back Squat",
+      "description": "Heavy compound leg exercise",
+      "reps": 8,
+      "sets": 4,
+      "restSeconds": 120,
+      "caloriesBurned": 100,
+      "mediaLink": "https://example.com/squat.mp4",
+      "notes": "Keep chest up, depth to parallel or below"
+    },
+    {
+      "id": 2,
+      "workoutPlanId": 1,
+      "name": "Leg Press",
+      "description": "Machine-based leg press",
+      "reps": 12,
+      "sets": 3,
+      "restSeconds": 90,
+      "caloriesBurned": 80,
+      "mediaLink": "https://example.com/legpress.mp4",
+      "notes": "Full range of motion"
+    },
+    {
+      "id": 3,
+      "workoutPlanId": 1,
+      "name": "Leg Curls",
+      "description": "Hamstring isolation exercise",
+      "reps": 12,
+      "sets": 3,
+      "restSeconds": 60,
+      "caloriesBurned": 50,
+      "mediaLink": "https://example.com/legcurls.mp4"
+    },
+    {
+      "id": 4,
+      "workoutPlanId": 2,
+      "name": "Barbell Bench Press",
+      "description": "Primary chest exercise",
+      "reps": 8,
+      "sets": 4,
+      "restSeconds": 120,
+      "caloriesBurned": 90,
+      "mediaLink": "https://example.com/benchpress.mp4"
+    },
+    {
+      "id": 5,
+      "workoutPlanId": 2,
+      "name": "Incline Dumbbell Press",
+      "description": "Upper chest isolation",
+      "reps": 10,
+      "sets": 3,
+      "restSeconds": 90,
+      "caloriesBurned": 70,
+      "mediaLink": "https://example.com/incline.mp4"
+    },
+    {
+      "id": 6,
+      "workoutPlanId": 2,
+      "name": "Tricep Dips",
+      "description": "Body weight tricep exercise",
+      "reps": 10,
+      "sets": 3,
+      "restSeconds": 60,
+      "caloriesBurned": 60,
+      "mediaLink": "https://example.com/dips.mp4"
+    },
+    {
+      "id": 7,
+      "workoutPlanId": 3,
+      "name": "Deadlifts",
+      "description": "Ultimate compound pulling movement",
+      "reps": 5,
+      "sets": 3,
+      "restSeconds": 180,
+      "caloriesBurned": 100,
+      "mediaLink": "https://example.com/deadlifts.mp4"
+    },
+    {
+      "id": 8,
+      "workoutPlanId": 3,
+      "name": "Pull-ups",
+      "description": "Back and bicep exercise",
+      "reps": 8,
+      "sets": 4,
+      "restSeconds": 90,
+      "caloriesBurned": 70,
+      "mediaLink": "https://example.com/pullups.mp4"
+    },
+    {
+      "id": 9,
+      "workoutPlanId": 4,
+      "name": "Burpees",
+      "description": "HIIT movement combining cardio and strength",
+      "reps": 15,
+      "sets": 3,
+      "restSeconds": 45,
+      "caloriesBurned": 80,
+      "mediaLink": "https://example.com/burpees.mp4"
+    },
+    {
+      "id": 10,
+      "workoutPlanId": 5,
+      "name": "Downward Dog",
+      "description": "Yoga pose for flexibility",
+      "reps": 20,
+      "sets": 2,
+      "restSeconds": 30,
+      "caloriesBurned": 25,
+      "mediaLink": "https://example.com/downwarddog.mp4"
+    }
+  ],
+  "progressLogs": [
+    {
+      "id": 1,
+      "date": "2025-01-15",
+      "userId": 1,
+      "workoutPlanId": 1,
+      "actualCalories": 460,
+      "durationMinutes": 62,
+      "completed": true,
+      "difficulty": "Hard",
+      "notes": "Great session! Hit all PRs on squats.",
+      "rating": 5,
+      "mood": "Energetic",
+      "createdAt": "2025-01-15T18:30:00Z"
+    },
+    {
+      "id": 2,
+      "date": "2025-01-14",
+      "userId": 1,
+      "workoutPlanId": 2,
+      "actualCalories": 340,
+      "durationMinutes": 48,
+      "completed": true,
+      "difficulty": "Medium",
+      "notes": "Good pump on chest. Felt strong.",
+      "rating": 4,
+      "mood": "Motivated",
+      "createdAt": "2025-01-14T19:00:00Z"
+    },
+    {
+      "id": 3,
+      "date": "2025-01-13",
+      "userId": 1,
+      "workoutPlanId": 3,
+      "actualCalories": 390,
+      "durationMinutes": 58,
+      "completed": true,
+      "difficulty": "Medium",
+      "notes": "Back was sore but good workout.",
+      "rating": 4,
+      "mood": "Good",
+      "createdAt": "2025-01-13T17:45:00Z"
+    },
+    {
+      "id": 4,
+      "date": "2025-01-12",
+      "userId": 2,
+      "workoutPlanId": 4,
+      "actualCalories": 410,
+      "durationMinutes": 32,
+      "completed": true,
+      "difficulty": "Hard",
+      "notes": "Intense HIIT session. Felt the burn!",
+      "rating": 5,
+      "mood": "Pumped",
+      "createdAt": "2025-01-12T20:15:00Z"
+    },
+    {
+      "id": 5,
+      "date": "2025-01-11",
+      "userId": 2,
+      "workoutPlanId": 5,
+      "actualCalories": 175,
+      "durationMinutes": 43,
+      "completed": true,
+      "difficulty": "Easy",
+      "notes": "Recovery day. Great flexibility work.",
+      "rating": 4,
+      "mood": "Relaxed",
+      "createdAt": "2025-01-11T18:00:00Z"
+    }
+  ]
+}
