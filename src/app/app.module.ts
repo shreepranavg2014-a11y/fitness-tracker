@@ -16,7 +16,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatIconModule } from '@angular/material/icon';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -44,10 +43,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     MatNativeDateModule,
     MatProgressBarModule,
     MatIconModule,
-    NgxChartsModule
+  
         RouterModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+
 })
 export class AppModule { }
