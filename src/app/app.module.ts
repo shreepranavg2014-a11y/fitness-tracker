@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 // Material Imports
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -16,7 +17,6 @@ import { MatMenuModule } from '@angular/material/menu';
 
 // App Components
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { WorkoutListComponent } from './components/workout-list/workout-list.component';
 import { WorkoutDetailComponent } from './components/workout-detail/workout-detail.component';
@@ -29,6 +29,35 @@ import { UserService } from './services/user.service';
 import { ProgressService } from './services/progress.service';
 import { AuthService } from './services/auth.service';
 
+// Routes
+const routes = [
+  {
+    path: '',
+    component: AppComponent
+  },
+  {
+    path: 'workouts',
+    component: WorkoutListComponent
+  },
+  {
+    path: 'detail/:id',
+    component: WorkoutDetailComponent
+  },
+  {
+    path: 'progress',
+    component: ProgressTrackerComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
+  }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,10 +66,10 @@ import { AuthService } from './services/auth.service';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterModule.forRoot(routes),
     // Material Modules
     MatToolbarModule,
     MatCardModule,
