@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { WorkoutListComponent } from './components/workout-list/workout-list.component';
 import { WorkoutDetailComponent } from './components/workout-detail/workout-detail.component';
 import { ProgressTrackerComponent } from './components/progress-tracker/progress-tracker.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
-export const routes: Routes = [
+export const appRoutes: Routes = [
   {
     path: '',
-    component: AppComponent,
-    data: { title: 'Home' }
+    redirectTo: 'workouts',
+    pathMatch: 'full'
   },
   {
     path: 'workouts',
@@ -18,7 +17,7 @@ export const routes: Routes = [
     data: { title: 'All Workouts' }
   },
   {
-    path: 'detail/:id',
+    path: 'workouts/:id',
     component: WorkoutDetailComponent,
     data: { title: 'Workout Details' }
   },
@@ -34,13 +33,13 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '',
+    redirectTo: 'workouts',
     pathMatch: 'full'
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
