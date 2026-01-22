@@ -30,7 +30,7 @@ import { ProgressLog } from '../../models/progress-log';
           <div class="form-row">
             <mat-form-field appearance="fill">
               <mat-label>Workout ID</mat-label>
-              <input matInput [(ngModel)]="newLog.workoutId" placeholder="Enter workout ID">
+              <input matInput type="number" [(ngModel)]="newLog.workoutId" placeholder="Enter workout ID">
             </mat-form-field>
             <mat-form-field appearance="fill">
               <mat-label>Duration (mins)</mat-label>
@@ -52,19 +52,19 @@ import { ProgressLog } from '../../models/progress-log';
           <table mat-table [dataSource]="progressLogs" class="progress-table">
             <ng-container matColumnDef="workoutId">
               <th mat-header-cell *matHeaderCellDef>Workout ID</th>
-              <td mat-cell *matCellDef="let log">{{ log.workoutId }}</td>
+              <td mat-cell *matCellDef="let log">{{ log?.workoutId }}</td>
             </ng-container>
             <ng-container matColumnDef="duration">
               <th mat-header-cell *matHeaderCellDef>Duration (mins)</th>
-              <td mat-cell *matCellDef="let log">{{ log.duration }}</td>
+              <td mat-cell *matCellDef="let log">{{ log?.duration }}</td>
             </ng-container>
             <ng-container matColumnDef="calories">
               <th mat-header-cell *matHeaderCellDef>Calories Burned</th>
-              <td mat-cell *matCellDef="let log">{{ log.caloriesBurned }}</td>
+              <td mat-cell *matCellDef="let log">{{ log?.caloriesBurned }}</td>
             </ng-container>
             <ng-container matColumnDef="date">
               <th mat-header-cell *matHeaderCellDef>Date</th>
-              <td mat-cell *matCellDef="let log">{{ log.logDate | date: 'short' }}</td>
+              <td mat-cell *matCellDef="let log">{{ log?.logDate | date: 'short' }}</td>
             </ng-container>
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
@@ -124,8 +124,8 @@ export class ProgressTrackerComponent implements OnInit {
   logProgress() {
     if (this.newLog.workoutId && this.newLog.duration && this.newLog.caloriesBurned) {
       const logEntry: ProgressLog = {
-        id: Date.now().toString(),
-        workoutId: this.newLog.workoutId as string,
+        id: Date.now(),
+        workoutId: this.newLog.workoutId as number,
         duration: this.newLog.duration as number,
         caloriesBurned: this.newLog.caloriesBurned as number,
         logDate: new Date()
