@@ -1,10 +1,7 @@
-:host {
-  display: block;
-}
-
-mat-toolbar {
-  background-color: #1976d2;
-  color: white;
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 2rem;
 }
 
 .spacer {
@@ -12,5 +9,13 @@ mat-toolbar {
 }
 
 button {
-  margin: 0 10px;
+  margin: 0 0.5rem;
+}
+
+button[routerLinkActive] {
+  opacity: 1;
+}
+
+.active {
+  text-decoration: underline;
 }
