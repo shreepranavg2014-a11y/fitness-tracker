@@ -57,7 +57,7 @@ export class WorkoutListComponent implements OnInit {
   }
 
   loadWorkouts() {
-    this.workoutService.getAllWorkouts().subscribe({
+    this.workoutService.getWorkouts().subscribe({
       next: (data) => {
         this.workouts = data;
       },
