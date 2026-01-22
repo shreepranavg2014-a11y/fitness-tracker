@@ -17,28 +17,28 @@ import { WorkoutPlan } from '../../models/workout-plan';
       </button>
       <mat-card class="workout-detail">
         <mat-card-header>
-          <mat-card-title>{{ workout.name }}</mat-card-title>
-          <mat-card-subtitle>{{ workout.description }}</mat-card-subtitle>
+          <mat-card-title>{{ workout?.name }}</mat-card-title>
+          <mat-card-subtitle>{{ workout?.description }}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
           <div class="detail-info">
             <div class="info-row">
               <strong>Difficulty Level:</strong>
-              <span>{{ workout.difficulty }}</span>
+              <span>{{ workout?.difficulty }}</span>
             </div>
             <div class="info-row">
               <strong>Duration:</strong>
-              <span>{{ workout.duration }} minutes</span>
+              <span>{{ workout?.duration }} minutes</span>
             </div>
             <div class="info-row">
               <strong>Exercises:</strong>
-              <span>{{ workout.exerciseIds?.length || 0 }} exercises</span>
+              <span>{{ workout?.exerciseIds?.length || 0 }} exercises</span>
             </div>
           </div>
-          <div *ngIf="workout.exerciseIds && workout.exerciseIds.length > 0" class="exercises-section">
+          <div *ngIf="workout?.exerciseIds && workout?.exerciseIds.length > 0" class="exercises-section">
             <h3>Exercises in this workout:</h3>
             <ul>
-              <li *ngFor="let exerciseId of workout.exerciseIds">Exercise ID: {{ exerciseId }}</li>
+              <li *ngFor="let exerciseId of workout?.exerciseIds">Exercise ID: {{ exerciseId }}</li>
             </ul>
           </div>
         </mat-card-content>
@@ -101,7 +101,7 @@ export class WorkoutDetailComponent implements OnInit {
   }
 
   loadWorkout(id: string) {
-    this.workoutService.getWorkoutById(id).subscribe({
+    this.workoutService.getWorkout(parseInt(id)).subscribe({
       next: (data) => {
         this.workout = data;
       },
