@@ -24,8 +24,8 @@ import { User } from '../../models/user';
       <h2>User Profile</h2>
       <mat-card class="profile-card" *ngIf="user">
         <mat-card-header>
-          <mat-card-title>{{ user.name }}</mat-card-title>
-          <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+          <mat-card-title>{{ user?.name }}</mat-card-title>
+          <mat-card-subtitle>{{ user?.email }}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
           <div class="profile-info">
@@ -33,34 +33,34 @@ import { User } from '../../models/user';
               <h3>Personal Information</h3>
               <div class="info-row">
                 <label>Name:</label>
-                <input matInput [(ngModel)]="user.name" [disabled]="!isEditing">
+                <input matInput [(ngModel)]="user!.name" [disabled]="!isEditing">
               </div>
               <div class="info-row">
                 <label>Email:</label>
-                <input matInput [(ngModel)]="user.email" [disabled]="!isEditing">
+                <input matInput [(ngModel)]="user!.email" [disabled]="!isEditing">
               </div>
               <div class="info-row">
                 <label>Age:</label>
-                <input matInput type="number" [(ngModel)]="user.age" [disabled]="!isEditing">
+                <input matInput type="number" [(ngModel)]="user!.age" [disabled]="!isEditing">
               </div>
               <div class="info-row">
                 <label>Height (cm):</label>
-                <input matInput type="number" [(ngModel)]="user.height" [disabled]="!isEditing">
+                <input matInput type="number" [(ngModel)]="user!.height" [disabled]="!isEditing">
               </div>
               <div class="info-row">
                 <label>Weight (kg):</label>
-                <input matInput type="number" [(ngModel)]="user.weight" [disabled]="!isEditing">
+                <input matInput type="number" [(ngModel)]="user!.weight" [disabled]="!isEditing">
               </div>
             </div>
-            <div class="info-section" *ngIf="user.stats">
+            <div class="info-section" *ngIf="user?.stats">
               <h3>Statistics</h3>
               <div class="info-row">
                 <label>Total Workouts:</label>
-                <span>{{ user.stats.workoutsCompleted }}</span>
+                <span>{{ user?.stats?.workoutsCompleted }}</span>
               </div>
               <div class="info-row">
                 <label>Total Calories:</label>
-                <span>{{ user.stats.totalCalories }}</span>
+                <span>{{ user?.stats?.totalCalories }}</span>
               </div>
             </div>
           </div>
@@ -165,8 +165,8 @@ export class ProfileComponent implements OnInit {
   }
 
   saveProfile() {
-    if (this.user) {
-      this.userService.updateUser(this.user).subscribe({
+    if (this.user && this.user.id) {
+      this.userService.updateUser(this.user.id, this.user).subscribe({
         next: () => {
           this.isEditing = false;
           this.originalUser = { ...this.user! };
