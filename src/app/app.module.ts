@@ -32,11 +32,13 @@ import { WorkoutService } from './services/workout.service';
 import { UserService } from './services/user.service';
 import { ProgressService } from './services/progress.service';
 import { AuthService } from './services/auth.service';
+import { WorkoutsComponent } from './components/workouts/workouts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent
+        WorkoutsComponent,
   ],
   imports: [
     BrowserModule,
