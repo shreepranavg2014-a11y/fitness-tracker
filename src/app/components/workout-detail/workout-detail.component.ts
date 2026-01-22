@@ -110,6 +110,5 @@ export class WorkoutDetailComponent implements OnInit {
   }
 
   startWorkout() {
-    alert(`Starting workout: ${this.workout!.name}`);
-  }
-}
+alert(`Starting workout: ${this.workout!.name}`;
+      }
