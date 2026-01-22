@@ -44,23 +44,23 @@ import { User } from '../../models/user';
                 <input matInput type="number" [(ngModel)]="user.age" [disabled]="!isEditing">
               </div>
               <div class="info-row">
-                <label>Fitness Goal:</label>
-                <input matInput [(ngModel)]="user.fitnessGoal" [disabled]="!isEditing">
+                <label>Height (cm):</label>
+                <input matInput type="number" [(ngModel)]="user.height" [disabled]="!isEditing">
+              </div>
+              <div class="info-row">
+                <label>Weight (kg):</label>
+                <input matInput type="number" [(ngModel)]="user.weight" [disabled]="!isEditing">
               </div>
             </div>
             <div class="info-section" *ngIf="user.stats">
               <h3>Statistics</h3>
               <div class="info-row">
                 <label>Total Workouts:</label>
-                <span>{{ user.stats.totalWorkouts }}</span>
+                <span>{{ user.stats.workoutsCompleted }}</span>
               </div>
               <div class="info-row">
-                <label>Total Hours:</label>
-                <span>{{ user.stats.totalHours }}</span>
-              </div>
-              <div class="info-row">
-                <label>Calories Burned:</label>
-                <span>{{ user.stats.caloriesBurned }}</span>
+                <label>Total Calories:</label>
+                <span>{{ user.stats.totalCalories }}</span>
               </div>
             </div>
           </div>
