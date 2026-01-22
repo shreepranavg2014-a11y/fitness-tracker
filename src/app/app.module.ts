@@ -37,7 +37,7 @@ import { WorkoutsComponent } from './components/workouts/workouts.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
         WorkoutsComponent,
   ],
   imports: [
