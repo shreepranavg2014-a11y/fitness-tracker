@@ -1,16 +1,12 @@
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-h1 {
-  color: #1976d2;
-  margin-top: 20px;
-}
-
-p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #666;
-}
+:host { --primary-color: #00C9B7; --dark-bg: #0f1419; --card-bg: #1a1f2e; }
+.app-container { min-height: 100vh; display: flex; flex-direction: column; background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%); color: #e0e0e0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+.app-navbar { background: linear-gradient(90deg, #1a1f2e 0%, #2d3748 100%); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0, 201, 183, 0.1); border-bottom: 2px solid var(--primary-color); }
+.navbar-brand { display: flex; align-items: center; gap: 0.5rem; }
+.navbar-brand h1 { margin: 0; font-size: 1.8rem; font-weight: 700; color: var(--primary-color); letter-spacing: 1px; }
+.tagline { font-size: 0.85rem; color: #9ca3af; margin-left: 1rem; }
+.nav-links { list-style: none; display: flex; gap: 2rem; margin: 0; padding: 0; }
+.nav-links a { color: #9ca3af; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 4px; transition: all 0.3s ease; position: relative; }
+.nav-links a:hover { color: var(--primary-color); background: rgba(0, 201, 183, 0.1); }
+.nav-links a.active { color: var(--primary-color); background: rgba(0, 201, 183, 0.15); border-bottom: 2px solid var(--primary-color); }
+.main-content { flex: 1; padding: 2rem; max-width: 1400px; width: 100%; margin: 0 auto; }
+.app-footer { background: #1a1f2e; padding: 2rem; text-align: center; color: #9ca3af; border-top: 1px solid rgba(0, 201, 183, 0.1); margin-top: auto; }
