@@ -113,7 +113,7 @@ export class ProgressTrackerComponent implements OnInit {
   }
 
   loadProgressLogs() {
-    this.progressService.getAllLogsLogs().subscribe({
+    this.progressService.getAllLogs().subscribe({
       next: (data) => {
         this.progressLogs = data;
       },
