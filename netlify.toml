@@ -1,6 +1,5 @@
 [build]
-  command = "npm run build" -- --configuration=development
-  publish = "dist/fitness-tracker"
+command = "npm run build -- --configuration=development"  publish = "dist/fitness-tracker"
 
 [[redirects]]
   from = "/*"
