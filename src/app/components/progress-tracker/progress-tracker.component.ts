@@ -130,7 +130,7 @@ export class ProgressTrackerComponent implements OnInit {
         caloriesBurned: this.newLog.caloriesBurned as number,
         logDate: new Date()
       };
-      this.progressService.createProgressLog(logEntry).subscribe({
+      this.progressService.addLog(logEntry).subscribe({
         next: (data) => {
           this.progressLogs.push(data);
           this.newLog = {};
