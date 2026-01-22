@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 
 // Material Imports
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -14,49 +13,25 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatListModule } from '@angular/material/list';
+import { MatSelectModule } from '@angular/material/select';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 
 // App Components
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { WorkoutListComponent } from './components/workout-list/workout-list.component';
-import { WorkoutDetailComponent } from './components/workout-detail/workout-detail.component';
-import { ProgressTrackerComponent } from './components/progress-tracker/progress-tracker.component';
-import { ProfileComponent } from './components/profile/profile.component';
+
+// Routing Module
+import { AppRoutingModule } from './app-routing.module';
 
 // Services
 import { WorkoutService } from './services/workout.service';
 import { UserService } from './services/user.service';
 import { ProgressService } from './services/progress.service';
 import { AuthService } from './services/auth.service';
-
-// Routes
-const routes = [
-  {
-    path: '',
-    component: AppComponent
-  },
-  {
-    path: 'workouts',
-    component: WorkoutListComponent
-  },
-  {
-    path: 'detail/:id',
-    component: WorkoutDetailComponent
-  },
-  {
-    path: 'progress',
-    component: ProgressTrackerComponent
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent
-  },
-  {
-    path: '**',
-    redirectTo: '',
-    pathMatch: 'full'
-  }
-];
 
 @NgModule({
   declarations: [
@@ -65,11 +40,11 @@ const routes = [
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes),
     // Material Modules
     MatToolbarModule,
     MatCardModule,
@@ -79,11 +54,12 @@ const routes = [
     MatInputModule,
     MatIconModule,
     MatMenuModule,
-    // Standalone Components
-    WorkoutListComponent,
-    WorkoutDetailComponent,
-    ProgressTrackerComponent,
-    ProfileComponent
+    MatGridListModule,
+    MatListModule,
+    MatSelectModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [
     WorkoutService,
