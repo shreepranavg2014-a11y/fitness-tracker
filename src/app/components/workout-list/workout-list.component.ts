@@ -16,15 +16,15 @@ import { WorkoutPlan } from '../../models/workout-plan';
       <div class="workout-grid">
         <mat-card *ngFor="let workout of workouts" class="workout-card">
           <mat-card-header>
-            <mat-card-title>{{ workout.name }}</mat-card-title>
+            <mat-card-title>{{ workout!.name }}</mat-card-title>
           </mat-card-header>
           <mat-card-content>
-            <p><strong>Level:</strong> {{ workout.difficulty }}</p>
-            <p><strong>Duration:</strong> {{ workout.duration }} mins</p>
-            <p>{{ workout.description }}</p>
+            <p><strong>Level:</strong> {{ workout!.difficulty }}</p>
+            <p><strong>Duration:</strong> {{ workout!.duration }} mins</p>
+            <p>{{ workout!.description }}</p>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-raised-button color="primary" [routerLink]="['/detail', workout.id]">
+            <button mat-raised-button color="primary" [routerLink]="['/detail', workout!.id]">
               View Details
             </button>
           </mat-card-actions>
@@ -61,7 +61,7 @@ export class WorkoutListComponent implements OnInit {
       next: (data) => {
         this.workouts = data;
       },
-      error: (err) => console.error('Error loading workouts:', err)
+      error: (err: any) => console.error('Error loading workouts:', err)
     });
   }
 }
