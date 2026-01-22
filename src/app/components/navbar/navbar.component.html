@@ -1,23 +1,16 @@
 <mat-toolbar color="primary">
-  <span class="app-title">💪 Fitness Tracker</span>
+  <span class="title">{{ title }}</span>
   <span class="spacer"></span>
-  
-  <button mat-button routerLink="/workouts">
+  <button mat-button routerLink="/workouts" routerLinkActive="active">
     <mat-icon>fitness_center</mat-icon>
     Workouts
   </button>
-  <button mat-button routerLink="/progress">
+  <button mat-button routerLink="/progress" routerLinkActive="active">
     <mat-icon>trending_up</mat-icon>
     Progress
   </button>
-  <button mat-button routerLink="/profile">
+  <button mat-button routerLink="/profile" routerLinkActive="active">
     <mat-icon>person</mat-icon>
     Profile
   </button>
-  
-  <button mat-button *ngIf="isAuthenticated$ | async" (click)="logout()">
-    <mat-icon>logout</mat-icon>
-    Logout
-  </button>
 </mat-toolbar>
-<router-outlet></router-outlet>
