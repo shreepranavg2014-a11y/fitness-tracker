@@ -24,8 +24,8 @@ import { User } from '../../models/user';
       <h2>User Profile</h2>
       <mat-card class="profile-card" *ngIf="user">
         <mat-card-header>
-          <mat-card-title>{{ user?.name }}</mat-card-title>
-          <mat-card-subtitle>{{ user?.email }}</mat-card-subtitle>
+          <mat-card-title>{{ user!.name }}</mat-card-title>
+          <mat-card-subtitle>{{ user!.email }}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
           <div class="profile-info">
@@ -52,15 +52,15 @@ import { User } from '../../models/user';
                 <input matInput type="number" [(ngModel)]="user!.weight" [disabled]="!isEditing">
               </div>
             </div>
-            <div class="info-section" *ngIf="user?.stats">
+            <div class="info-section" *ngIf="user!.stats">
               <h3>Statistics</h3>
               <div class="info-row">
                 <label>Total Workouts:</label>
-                <span>{{ user?.stats?.workoutsCompleted }}</span>
+                <span>{{ user!.stats!.workoutsCompleted }}</span>
               </div>
               <div class="info-row">
                 <label>Total Calories:</label>
-                <span>{{ user?.stats?.totalCalories }}</span>
+                <span>{{ user!.stats!.totalCalories }}</span>
               </div>
             </div>
           </div>
@@ -151,13 +151,11 @@ export class ProfileComponent implements OnInit {
   }
 
   loadUserProfile() {
-    this.userService.getCurrentUser().subscribe({
-      next: (data) => {
-        this.user = data;
-        this.originalUser = { ...data };
-      },
-      error: (err) => console.error('Error loading user profile:', err)
-    });
+    const currentUser = this.userService.getCurrentUser();
+    if (currentUser) {
+      this.user = currentUser;
+      this.originalUser = { ...currentUser };
+    }
   }
 
   enableEdit() {
@@ -172,7 +170,7 @@ export class ProfileComponent implements OnInit {
           this.originalUser = { ...this.user! };
           alert('Profile updated successfully!');
         },
-        error: (err) => console.error('Error updating profile:', err)
+        error: (err: any) => console.error('Error updating profile:', err)
       });
     }
   }
